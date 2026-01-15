@@ -11,9 +11,10 @@ for (const form of forms) {
     }
 
     const inputElement = field.firstElementChild;
-    const inputName = inputElement.getAttribute('name').replaceAll('-', ' ');
+    const inputName = inputElement.getAttribute('name');
+    const inputNameWithNoHyphens = inputName.replaceAll('-', ' ')
     const inputPlaceholder =
-      inputName.slice(0, 1).toUpperCase() + inputName.slice(1).toLowerCase();
+      inputNameWithNoHyphens.slice(0, 1).toUpperCase() + inputNameWithNoHyphens.slice(1).toLowerCase();
     const inputIdentifier = inputElement.id;
 
     inputElement.setAttribute('placeholder', inputPlaceholder);
