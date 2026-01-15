@@ -11,7 +11,7 @@ for (const form of forms) {
     }
 
     const inputElement = field.firstElementChild;
-    const inputName = inputElement.getAttribute('name');
+    const inputName = inputElement.getAttribute('name').replaceAll('-', ' ');
     const inputPlaceholder =
       inputName.slice(0, 1).toUpperCase() + inputName.slice(1).toLowerCase();
     const inputIdentifier = inputElement.id;
